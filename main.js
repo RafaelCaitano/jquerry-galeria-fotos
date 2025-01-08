@@ -1,26 +1,18 @@
-$(document).ready(function(){
+$(document).ready(function() {
+    $("#formularioTarefa").submit(function(event) {
+        event.preventDefault(); 
 
-   $('header button').click(function(e){
-        $('form').slideDown();
-   })
+        const nomeTarefa = $("#nomeTarefa").val();
 
-   $('#botao-cancelar').click(function(){
-    $('form').slideUp();
-   })
+        if (nomeTarefa.trim() !== "") { 
+            $("#listaTarefas").append("<li>" + nomeTarefa + "</li>");
+            $("#nomeTarefa").val("");
+        } else {
+            alert("Por favor, insira o nome da tarefa."); 
+        }
+    });
 
-   $('form').on('submit', function(e){
-        e.preventDefault();
-        const enderecoDaNovaImagem = $('#endereco-imagem-nova').val();
-        const novoItem = $('<li style="display: none"></li>')
-        $(`<img src="${enderecoDaNovaImagem}" />`).appendTo(novoItem);
-        $(`
-            <div class="overlay-imagem-link">
-                <a href="${enderecoDaNovaImagem}" target="_blank" title="Ver imagem em tamanho real"
-                    Ver imagem em tamanho real
-                </a>
-        `).appendTo(novoItem);
-        $(novoItem).appendTo('ul');
-        $(novoItem).fadeIn();
-        $('#endereco-imagem-nova').val('');
-   })
-})
+    $("#listaTarefas").on("click", "li", function() {
+        $(this).toggleClass("concluida");
+    });
+});

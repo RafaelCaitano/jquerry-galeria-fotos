@@ -1,59 +1,24 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JQuery</title>
-    <link rel="preconnect" href="http://fonts.googleapis.com">
-    <link rel="preconnect" href="http://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./main.css">
-
+    <title>Lista de tarefas</title>
+    <style>
+        .concluida{
+            text-decoration: line-through;
+        }
+    </style>
 </head>
-
 <body>
-    <header>
-        <h1>Galeria de Fotos</h1>
-        <button type="button">Nova imagem +</button>
-    </header>
-    <form>
-        <h2>Inserir nova imagem</h2>
-        <input type="url" id="endereço-imagem-nova" required placeholder="URL da imagem">
+    <h1>Lista de Tarefas</h1>
+    <form id="formularioTarefa">
+        <input type="text" id="nomeTarefa" placeholder="Nome da tarefa">
         <button type="submit">Adicionar</button>
-        <button type="reset" id="botao-cancelar">Cancelar</button>
     </form>
-    <ul>
-        <li>
-            <img src="./loja.jpg" alt="lojas">
-            
-            <div class="overlay-imagem-link">
-                <a href="./loja.jpg" title="Ver imagem em tamanho real" target="_blank">
-                    Ver imagem em tamanho real
-                </a>
-            </div>
-        </li>
+    <ul id="listaTarefas"></ul>
 
-        <li>
-            <img src="./playstation.png" alt="logo-playstation">
-            <div  class="overlay-imagem-link">
-                <a href="./playstation.png" title="Ver imagem em tamanho real" target="_blank">
-                    Ver imagem em tamanho real
-                </a>
-            </div>
-        </li>
-
-        <li>
-            <img src="./xbox.png" alt="logo-xbox">
-            <div  class="overlay-imagem-link">
-                <a href="./xbox.png" title="Ver imagem em tamanho real" target="_blank">
-                    Ver imagem em tamanho real
-                </a>
-            </div>
-        </li>
-    </ul>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./main.js"></script>
 </body>
-
 </html>
